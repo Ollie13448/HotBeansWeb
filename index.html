@@ -15,6 +15,8 @@
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
 
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+        <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
     
         <style>
             
@@ -91,10 +93,40 @@
                 color:#9CC1DA;
         
             }
+
+            .hidden {
+
+                visibility: hidden;
+
+            }
     
         </style>
     
         <!--I defined the hover effect for the list items' text by selecting the ul li:hover a CSS selector. This applies the hover effect to all links (<a>) within list items (<li>) within an unordered list (<ul>) when they are hovered over with the mouse. I then set the color property to orange to give the text an orange hover color.-->
+
+        <script>
+
+            $(document).ready(function(){
+
+                let el = document.getElementById("intro");
+
+                if(el) { /* Intro div was found */
+
+                    if(el.classList.contains("hidden")) { /* Intro element is invisible? */
+
+                        el.classList.remove("hidden"); /* Remove invisibility */
+
+                        $(el).fadeOut(1); /* Make it invisible via JQuery, and not by class */
+
+                        $(el).fadeIn(1500); /* Slowly fade in intro - now being completely visible to the user */
+
+                    };
+
+                };
+
+            });
+
+        </script>
 
     </head>
 
@@ -148,7 +180,7 @@
         
             <a href="javascript:void(0)" onclick="w3_close()" class="w3-bar-item w3-button w3-large w3-padding-16">Close ×</a>
 
-            <a href="#about" onclick="w3_close()" class="w3-bar-item w3-button">HOME</a>
+            <a href="#home" onclick="w3_close()" class="w3-bar-item w3-button">HOME</a>
 
             <a href="#courses" onclick="w3_close()" class="w3-bar-item w3-button">COURSES</a>
 
@@ -164,7 +196,11 @@
         
             <!-- the <div> element with display: flex; justify-content: center; will center-align the content inside it, which includes the unordered list (<ul>) and its items (<li>). The display: inline-block; and margin: 0 10px; CSS properties for the list items will make them display on one line with some spacing between them. The list-style: none; and padding: 0; CSS properties for the list will remove any default bullet points and padding. You can replace the content of the list with your own items as needed.-->
 
-            <h1 style="text-align: center;">Brewing Innovation:<br><span>Join the Hot Beans Web Team and Build the Future!</span></h1></justify-text>
+            <div id="intro" class="hidden">
+
+                <h1 style="text-align: center;">Brewing Innovation:<br><span>Join the Hot Beans Web Team and Build the Future!</span></h1></justify-text>
+
+            </div>
 
         </div>
     
