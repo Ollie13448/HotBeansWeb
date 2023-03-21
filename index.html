@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+
+    <html lang="en">
+
+    <head>
+
+        <title>Hot Beans</title>
+
+        <meta charset="UTF-8">
+
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+        <style>
+            
+            body, h1, h2, h3, h4, h5,
+        
+            h6 {
+                
+                font-family: "Raleway", sans-serif
+        
+            }
+        
+            /* Full height image header */
+        
+            body {
+                
+                background-image: url('img/Our Promise.png');
+        
+                background-repeat: no-repeat;
+        
+                background-attachment: fixed;
+        
+                background-size: cover;
+        
+            }
+        
+            .w3-bar .w3-button {
+                
+                padding: 16px;
+        
+            }
+        
+            body {
+                
+                background-color: white;
+        
+            }
+        
+            .top-left {
+                
+                position: absolute;
+        
+                top: 0;
+        
+                left: 0;
+        
+            }
+        
+            ul {
+                
+                list-style-type: none;
+        
+                margin: 0;
+        
+                padding: 0;
+        
+                overflow: hidden;
+        
+                background-color: white;
+        
+                width: 250spx;
+        
+                height: 50px;
+        
+            }
+        
+            li {
+                
+                float: left;
+        
+            }
+        
+            ul li:hover {
+                
+                color:#9CC1DA;
+        
+            }
+    
+        </style>
+    
+        <!--I defined the hover effect for the list items' text by selecting the ul li:hover a CSS selector. This applies the hover effect to all links (<a>) within list items (<li>) within an unordered list (<ul>) when they are hovered over with the mouse. I then set the color property to orange to give the text an orange hover color.-->
+
+    </head>
+
+    <body background="img/Our Promise.png">
+
+        <!--I first created a container element with the position: relative; CSS property. This is because the position: absolute; property will position the image relative to the nearest positioned ancestor. Then I created an img element with the class attribute set to "top-left" and set the src, alt, width, and height attributes as needed. Finally, I applied the position: absolute;, top: 0;, and left: 0; properties to the .top-left CSS class, which positions the image in the top left corner of its container element.-->
+
+        <!-- Navbar (sit on top) -->
+
+        <div class="w3-top">
+
+            <div class="w3-bar w3-white w3-card" id="myNavbar">
+
+                <a href="#home" class="w3-bar-item w3-button w3-wide">
+
+                    <img class="top-left" src="C:\Users\olivi\OneDrive\Desktop\OliviaHotBeans\img\HotBeansWeb.png" alt="width=100", height="50">
+
+                </a>
+
+                <!-- Right-sided navbar links -->
+
+                <div class="w3-right w3-hide-small">
+
+                    <a href="#about" class="w3-bar-item w3-button"><i class="fa fa-home"></i> HOME</a>
+
+                    <a href="#courses" class="w3-bar-item w3-button"><i class="fa fa-th"></i> COURSES</a>
+
+                    <a href="#team" class="w3-bar-item w3-button"><i class="fa fa-user"></i> TEAM</a>
+
+                    <a href="#job specification" class="w3-bar-item w3-button"><i class="fa fa-search"></i> JOB SPECIFICATION</a>
+
+                    <a href="#contact" class="w3-bar-item w3-button"><i class="fa fa-envelope"></i> CONTACT</a>
+
+                </div>
+
+                <!-- Hide right-floated links on small screens and replace them with a menu icon -->
+
+                <a href="javascript:void(0)" class="w3-bar-item w3-button w3-right w3-hide-large w3-hide-medium" onclick="w3_open()">
+
+                    <i class="fa fa-bars"></i>
+
+                </a>
+
+            </div>
+
+        </div>
+
+        <!-- Sidebar on small screens when clicking the menu icon -->
+
+        <nav class="w3-sidebar w3-bar-block w3-black w3-card w3-animate-left w3-hide-medium w3-hide-large" style="display:none" id="mySidebar">
+        
+            <a href="javascript:void(0)" onclick="w3_close()" class="w3-bar-item w3-button w3-large w3-padding-16">Close ×</a>
+
+            <a href="#about" onclick="w3_close()" class="w3-bar-item w3-button">HOME</a>
+
+            <a href="#courses" onclick="w3_close()" class="w3-bar-item w3-button">COURSES</a>
+
+            <a href="#team" onclick="w3_close()" class="w3-bar-item w3-button">TEAM</a>
+
+            <a href="#job specification" onclick="w3_close()" class="w3-bar-item w3-button">JOB SPECIFICATION</a>
+
+            <a href="#contact" onclick="w3_close()" class="w3-bar-item w3-button">CONTACT</a>
+
+        </nav>
+      
+        <div class="w3-display-middle">
+        
+            <!-- the <div> element with display: flex; justify-content: center; will center-align the content inside it, which includes the unordered list (<ul>) and its items (<li>). The display: inline-block; and margin: 0 10px; CSS properties for the list items will make them display on one line with some spacing between them. The list-style: none; and padding: 0; CSS properties for the list will remove any default bullet points and padding. You can replace the content of the list with your own items as needed.-->
+
+            <h1 style="text-align: center;">Brewing Innovation:<br><span>Join the Hot Beans Web Team and Build the Future!</span></h1></justify-text>
+
+        </div>
+    
+        <div class="w3-display-bottommiddle">
+
+            <p><a href="#about" class="w3-button w3-white w3-padding-large w3-large w3-margin-top w3-opacity w3-hover-opacity-off">Learn more and start today</a></p>
+
+        </div>
+
+    </body>
+
+</html>
