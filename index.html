@@ -119,6 +119,19 @@
 
         <script>
 
+            function w3_open() {
+                
+                document.getElementById("mySidebar").style.width = "100%";
+                document.getElementById("mySidebar").style.display = "block";
+
+            };
+
+            function w3_close() {
+                
+                document.getElementById("mySidebar").style.display = "none";
+
+            };
+
             function goToPage(index) {
 
                 if(typeof(this.once) == "undefined")
@@ -185,7 +198,7 @@
 
             <div class="w3-bar w3-white w3-card" id="myNavbar">
 
-                <a href="#home" class="w3-bar-item w3-button w3-wide">
+                <a onclick="goToPage(0);" class="w3-bar-item w3-button w3-wide">
 
                     <img class="top-left" src="img\HotBeansWeb.png" alt="width=100", height="50">
 
@@ -209,7 +222,7 @@
 
                 <!-- Hide right-floated links on small screens and replace them with a menu icon -->
 
-                <a href="javascript:void(0)" class="w3-bar-item w3-button w3-right w3-hide-large w3-hide-medium" onclick="w3_open()">
+                <a onclick="w3_open();" href="javascript:void(0);" class="w3-bar-item w3-button w3-right w3-hide-large w3-hide-medium">
 
                     <i class="fa fa-bars"></i>
 
@@ -225,15 +238,15 @@
         
             <a href="javascript:void(0)" onclick="w3_close()" class="w3-bar-item w3-button w3-large w3-padding-16">Close ×</a>
 
-            <a href="#home" onclick="w3_close();" class="w3-bar-item w3-button">HOME</a>
+            <a onclick="w3_close(); goToPage(0);" class="w3-bar-item w3-button">HOME</a>
 
-            <a href="#courses" onclick="w3_close();" class="w3-bar-item w3-button">COURSES</a>
+            <a onclick="w3_close(); goToPage(1);" class="w3-bar-item w3-button">COURSES</a>
 
-            <a href="#team" onclick="w3_close();" class="w3-bar-item w3-button">TEAM</a>
+            <a onclick="w3_close(); goToPage(2);" class="w3-bar-item w3-button">TEAM</a>
 
-            <a href="#job specification" onclick="w3_close();" class="w3-bar-item w3-button">JOB SPECIFICATION</a>
+            <a onclick="w3_close(); goToPage(3);" class="w3-bar-item w3-button">JOB SPECIFICATION</a>
 
-            <a href="#contact" onclick="w3_close();" class="w3-bar-item w3-button">CONTACT</a>
+            <a onclick="w3_close(); goToPage(4);" class="w3-bar-item w3-button">CONTACT</a>
 
         </nav>
       
