@@ -1,306 +1,486 @@
 <!DOCTYPE html>
 
-    <html lang="en">
+<html lang="en">
 
-    <head>
+<head>
 
-        <title>Hot Beans</title>
+    <title>Hot Beans</title>
 
-        <meta charset="UTF-8">
+    <meta charset="UTF-8">
 
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
 
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-        <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
-    
-        <style>
-            
-            body, h1, h2, h3, h4, h5,
-        
-            h6 {
-                
-                font-family: "Raleway", sans-serif
-        
-            }
-        
-            /* Full height image header */
-        
-            body {
-                
-                /*background-image: url('img/Our Promise.png');*/
-        
-                background-repeat: no-repeat;
-        
-                background-attachment: fixed;
-        
-                background-size: cover;
-        
-            }
-        
-            .w3-bar .w3-button {
-                
-                padding: 16px;
-        
-            }
-        
-            body {
-                
-                background-color: white;
-        
-            }
-        
-            .top-left {
-                
-                position: absolute;
-        
-                top: 0;
-        
-                left: 0;
-        
-            }
-        
-            ul {
-                
-                list-style-type: none;
-        
-                margin: 0;
-        
-                padding: 0;
-        
-                overflow: hidden;
-        
-                background-color: white;
-        
-                width: 250spx;
-        
-                height: 50px;
-        
-            }
-        
-            li {
-                
-                float: left;
-        
-            }
-        
-            ul li:hover {
-                
-                color:#9CC1DA;
-        
-            }
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 
-            .hidden {
+    <style>
+        body,
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
 
-                visibility: hidden;
+        h6 {
 
-            }
+            font-family: "Raleway", sans-serif
+        }
 
-            .page {
+        /* Full height image header */
 
-                visibility: hidden;
+        body {
 
-            };
+        /*background-image: url('img/Our Promise.png');*/
 
-            .text-purple {
+            background-repeat: no-repeat;
 
-                color: #6E54DB;
-                text-decoration: underline;
+            background-attachment: fixed;
 
-            }
-    
-        </style>
-    
-        <!--I defined the hover effect for the list items' text by selecting the ul li:hover a CSS selector. This applies the hover effect to all links (<a>) within list items (<li>) within an unordered list (<ul>) when they are hovered over with the mouse. I then set the color property to orange to give the text an orange hover color.-->
+            background-size: cover;
 
-        <script>
+        }
 
-            function w3_open() {
-                
-                document.getElementById("mySidebar").style.width = "100%";
-                document.getElementById("mySidebar").style.display = "block";
+        .w3-bar .w3-button {
 
-            };
+            padding: 16px;
 
-            function w3_close() {
-                
-                document.getElementById("mySidebar").style.display = "none";
+        }
 
-            };
+        body {
 
-            function goToPage(index) {
+            background-color: white;
 
-                if(typeof(this.once) == "undefined")
-                    this.once = false;
-                
-                let pages = document.getElementsByClassName("page");
+        }
 
-                if((pages.length - 1) < index)
-                    return console.log("Out of bounds!");
+        .top-left {
 
-                    if(!this.once) {
+            position: absolute;
 
-                        let intro = document.getElementById("intro");
+            top: 0;
 
-                        $(intro).fadeOut("fast", function(){
-                            for(var I = 0; I < pages.length; I++) {
-                                $(pages[I]).css("visibility", "visible");
-                                $(pages[I]).fadeOut(1);
-                                $(pages[I]).fadeIn("slow");
-                            };
-                        });
+            left: 0;
 
-                        this.once = true;
-                    
+        }
+
+        ul {
+
+            list-style-type: none;
+
+            margin: 0;
+
+            padding: 0;
+
+            overflow: hidden;
+
+            background-color: white;
+
+            width: 250spx;
+
+            height: 50px;
+
+        }
+
+        li {
+
+            float: left;
+
+        }
+
+        ul li:hover {
+
+            color: #9CC1DA;
+
+        }
+
+        .hidden {
+
+            visibility: hidden;
+
+        }
+
+        .page {
+
+            visibility: hidden;
+
+        }
+
+        ;
+
+        .text-purple {
+
+            color: #6E54DB;
+            text-decoration: underline;
+
+        }
+    </style>
+
+    <!--I defined the hover effect for the list items' text by selecting the ul li:hover a CSS selector. This applies the hover effect to all links (<a>) within list items (<li>) within an unordered list (<ul>) when they are hovered over with the mouse. I then set the color property to orange to give the text an orange hover color.-->
+
+    <script>
+
+        function w3_open() {
+
+            document.getElementById("mySidebar").style.width = "100%";
+            document.getElementById("mySidebar").style.display = "block";
+
+        };
+
+        function w3_close() {
+
+            document.getElementById("mySidebar").style.display = "none";
+
+        };
+
+        function goToPage(index) {
+
+            if (typeof (this.once) == "undefined")
+                this.once = false;
+
+            let pages = document.getElementsByClassName("page");
+
+            if ((pages.length - 1) < index)
+                return console.log("Out of bounds!");
+
+            if (!this.once) {
+
+                let intro = document.getElementById("intro");
+
+                $(intro).fadeOut("fast", function () {
+                    for (var I = 0; I < pages.length; I++) {
+                        $(pages[I]).css("visibility", "visible");
+                        $(pages[I]).fadeOut(1);
+                        $(pages[I]).fadeIn("slow");
                     };
+                });
 
-                    /* Scroll to de lovely page */
-
-                    $("html,body").animate({ scrollTop: $(pages[index]).offset().top});
+                this.once = true;
 
             };
 
-            $(document).ready(function(){
+            /* Scroll to de lovely page */
 
-                let el = document.getElementById("intro");
+            $("html,body").animate({ scrollTop: $(pages[index]).offset().top });
 
-                if(el) { /* Intro div was found */
+        };
 
-                    if(el.classList.contains("hidden")) { /* Intro element is invisible? */
+        $(document).ready(function () {
 
-                        el.classList.remove("hidden"); /* Remove invisibility */
+            let el = document.getElementById("intro");
 
-                        $(el).fadeOut(1); /* Make it invisible via JQuery, and not by class */
+            if (el) { /* Intro div was found */
 
-                        $(el).fadeIn(1500); /* Slowly fade in intro - now being completely visible to the user */
+                if (el.classList.contains("hidden")) { /* Intro element is invisible? */
 
-                    };
+                    el.classList.remove("hidden"); /* Remove invisibility */
+
+                    $(el).fadeOut(1); /* Make it invisible via JQuery, and not by class */
+
+                    $(el).fadeIn(1500); /* Slowly fade in intro - now being completely visible to the user */
 
                 };
 
-            });
+            };
 
-        </script>
+        });
 
-    </head>
+    </script>
 
-    <body>
+</head>
 
-        <!--I first created a container element with the position: relative; CSS property. This is because the position: absolute; property will position the image relative to the nearest positioned ancestor. Then I created an img element with the class attribute set to "top-left" and set the src, alt, width, and height attributes as needed. Finally, I applied the position: absolute;, top: 0;, and left: 0; properties to the .top-left CSS class, which positions the image in the top left corner of its container element.-->
+<body>
 
-        <!-- Navbar (sit on top) -->
+    <!--I first created a container element with the position: relative; CSS property. This is because the position: absolute; property will position the image relative to the nearest positioned ancestor. Then I created an img element with the class attribute set to "top-left" and set the src, alt, width, and height attributes as needed. Finally, I applied the position: absolute;, top: 0;, and left: 0; properties to the .top-left CSS class, which positions the image in the top left corner of its container element.-->
 
-        <div class="w3-top">
+    <!-- Navbar (sit on top) -->
 
-            <div class="w3-bar w3-white w3-card" id="myNavbar">
+    <div class="w3-top">
 
-                <a onclick="goToPage(0);" class="w3-bar-item w3-button w3-wide">
+        <div class="w3-bar w3-white w3-card" id="myNavbar">
 
-                    <img class="top-left" src="img\HotBeansWeb.png" alt="width=100", height="50">
+            <a onclick="goToPage(0);" class="w3-bar-item w3-button w3-wide">
 
-                </a>
+                <img class="top-left" src="img\HotBeansWeb.png" alt="width=100" , height="50">
 
-                <!-- Right-sided navbar links -->
+            </a>
 
-                <div class="w3-right w3-hide-small">
+            <!-- Right-sided navbar links -->
 
-                    <a onclick="goToPage(0);" class="w3-bar-item w3-button"><i class="fa fa-home"></i> HOME</a>
+            <div class="w3-right w3-hide-small">
 
-                    <a onclick="goToPage(1);" class="w3-bar-item w3-button"><i class="fa fa-th"></i> COURSES</a>
+                <a onclick="goToPage(0);" class="w3-bar-item w3-button"><i class="fa fa-home"></i> HOME</a>
 
-                    <a onclick="goToPage(2);" class="w3-bar-item w3-button"><i class="fa fa-user"></i> TEAM</a>
+                <a onclick="goToPage(1);" class="w3-bar-item w3-button"><i class="fa fa-th"></i> COURSES</a>
 
-                    <a onclick="goToPage(3);" class="w3-bar-item w3-button"><i class="fa fa-search"></i> JOB SPECIFICATION</a>
+                <a onclick="goToPage(2);" class="w3-bar-item w3-button"><i class="fa fa-user"></i> TEAM</a>
 
-                    <a onclick="goToPage(4);" class="w3-bar-item w3-button"><i class="fa fa-envelope"></i> CONTACT</a>
+                <a onclick="goToPage(3);" class="w3-bar-item w3-button"><i class="fa fa-search"></i> JOB
+                    SPECIFICATION</a>
+
+                <a onclick="goToPage(4);" class="w3-bar-item w3-button"><i class="fa fa-envelope"></i> CONTACT</a>
+
+            </div>
+
+            <!-- Hide right-floated links on small screens and replace them with a menu icon -->
+
+            <a onclick="w3_open();" href="javascript:void(0);"
+                class="w3-bar-item w3-button w3-right w3-hide-large w3-hide-medium">
+
+                <i class="fa fa-bars"></i>
+
+            </a>
+
+        </div>
+
+    </div>
+
+    <!-- Sidebar on small screens when clicking the menu icon -->
+
+    <nav class="w3-sidebar w3-bar-block w3-black w3-card w3-animate-left w3-hide-medium w3-hide-large"
+        style="display:none" id="mySidebar">
+
+        <a href="javascript:void(0)" onclick="w3_close()" class="w3-bar-item w3-button w3-large w3-padding-16">Close
+            ×</a>
+
+        <a onclick="w3_close(); goToPage(0);" class="w3-bar-item w3-button">HOME</a>
+
+        <a onclick="w3_close(); goToPage(1);" class="w3-bar-item w3-button">COURSES</a>
+
+        <a onclick="w3_close(); goToPage(2);" class="w3-bar-item w3-button">TEAM</a>
+
+        <a onclick="w3_close(); goToPage(3);" class="w3-bar-item w3-button">JOB SPECIFICATION</a>
+
+        <a onclick="w3_close(); goToPage(4);" class="w3-bar-item w3-button">CONTACT</a>
+
+    </nav>
+
+    <div id="intro" class="hidden"> <!-- Intro, renders by default -->
+        <div class="w3-display-middle">
+
+            <!-- the <div> element with display: flex; justify-content: center; will center-align the content inside it, which includes the unordered list (<ul>) and its items (<li>). The display: inline-block; and margin: 0 10px; CSS properties for the list items will make them display on one line with some spacing between them. The list-style: none; and padding: 0; CSS properties for the list will remove any default bullet points and padding. You can replace the content of the list with your own items as needed.-->
+
+            <h1 style="text-align: center; color: white;">Brewing Innovation:<br><span>Join the Hot Beans Web Team and
+                    Build the Future!</span></h1></justify-text>
+
+        </div>
+
+        <div class="w3-display-bottommiddle">
+
+            <p><a onclick="goToPage(0);"
+                    class="w3-button w3-white w3-padding-large w3-large w3-margin-top w3-opacity w3-hover-opacity-off">Learn
+                    more and start today</a></p>
+
+        </div>
+    </div>
+
+    <div style="text-align: center;padding:64px;">
+
+        <div class="page"> <!-- About Page -->
+
+            <h1 class="text-purple">About</h1>
+
+            Are you a passionate web developer looking to grow your skills and develop your career with a dynamic and
+            innovative company? Our team of dedicated professionals is always looking for talented individuals to join
+            us and help us take our business to the next level.<br><br><img
+                src="C:\Users\olivi\OneDrive\Desktop\OliviaHotBeans\img\team.png" width="350" height="230"><br><br>Our
+            web design company has been providing high-quality web development services for over a decade. Our team is
+            made up of experts in their fields who are committed to delivering exceptional results for our clients. We
+            work with a wide range of businesses, from small startups to large corporations, across various industries.
+            Our mission is to help our clients achieve their business goals through innovative and effective web design
+            and development solutions.
+        </div>
+
+        <div class="page"> <!-- Courses Page -->
+
+            <h1 class="text-purple">Courses</h1>
+
+            We are committed to helping our employees grow and develop their skills. That's why we offer access to a range of web development courses, both online and in-person. Whether you're just starting out in your career or looking to expand your skill set, we have a course that's right for you.<br>Join our team of web developers today and help us create innovative and effective web solutions for our clients. Apply now and take the first step towards an exciting new career with our web design company!
+        </div>
+
+        <div class="page"> <!-- Team Page -->
+
+            <h1 class="text-purple">Team</h1>
+
+            Our team of web developers includes a number of trainees who have already made great strides in their careers. Meet Sarah, who joined us just a year ago and has already become a valuable member of our team. Or how about John, who has been with us for two years and has recently taken on a leadership role in a new project? Our trainee web developers are given every opportunity to grow and develop their skills, so they can progress quickly and achieve their career goals.
+        </div>
+
+        <div class="page"> <!-- Job Specification Page -->
+
+            <h1 class="text-purple">Job Specification</h1>
+
+            We are looking for talented web developers to join our team. Successful candidates will have experience in web development, strong technical skills, and the ability to work well in a team. A degree in computer science or a related field is preferred, but not essential. We value candidates who are passionate about their work, self-motivated, and always looking to learn and improve.
+        </div>
+
+        <div class="page"> <!-- Contact Page -->
+
+            <h1 class="text-purple">Contact Us</h1>
+            
+            If you are interested in joining our team, please fill out our online application form. We ask for basic contact information, a resume, and a cover letter outlining why you think you would be a good fit for our company. Our recruitment team will review your application and get back to you as soon as possible.
+            <style>
+               
+                .ApplicationForm {
+                    color: #000;
+                    text-transform: uppercase;
+                    letter-spacing: 2px;
+                    display: block;
+                    font-weight: bold;
+                    font-size: x-large;
+                    margin-top: 1.5em;
+                }
+
+                .card {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    min-height: 350px;
+                    width: 400px;
+                    flex-direction: column;
+                    gap: 35px;
+                    border-radius: 15px;
+                    background: #e3e3e3;
+                    box-shadow: 16px 16px 32px #c8c8c8,
+                        -16px -16px 32px #fefefe;
+                    border-radius: 8px;
+                }
+
+                .inputBox,
+                .inputBox1 {
+                    position: relative;
+                    width: 350px;
+                }
+
+                .inputBox input,
+                .inputBox1 input {
+                    width: 100%;
+                    padding: 10px;
+                    outline: none;
+                    border: none;
+                    color: #000;
+                    font-size: 1em;
+                    background: transparent;
+                    border-left: 2px solid #000;
+                    border-bottom: 2px solid #000;
+                    transition: 0.1s;
+                    border-bottom-left-radius: 8px;
+                }
+
+                .inputBox span,
+                .inputBox1 span {
+                    margin-top: 5px;
+                    position: absolute;
+                    left: 0;
+                    transform: translateY(-4px);
+                    margin-left: 10px;
+                    padding: 10px;
+                    pointer-events: none;
+                    font-size: 12px;
+                    color: #000;
+                    text-transform: uppercase;
+                    transition: 0.5s;
+                    letter-spacing: 3px;
+                    border-radius: 8px;
+                }
+
+                .inputBox input:valid~span,
+                .inputBox input:focus~span {
+                    transform: translateX(113px) translateY(-15px);
+                    font-size: 0.8em;
+                    padding: 5px 10px;
+                    background: #000;
+                    letter-spacing: 0.2em;
+                    color: #fff;
+                    border: 2px;
+                }
+
+                .inputBox1 input:valid~span,
+                .inputBox1 input:focus~span {
+                    transform: translateX(156px) translateY(-15px);
+                    font-size: 0.8em;
+                    padding: 5px 10px;
+                    background: #000;
+                    letter-spacing: 0.2em;
+                    color: #fff;
+                    border: 2px;
+                }
+
+                .inputBox input:valid,
+                .inputBox input:focus,
+                .inputBox1 input:valid,
+                .inputBox1 input:focus {
+                    border: 2px solid #000;
+                    border-radius: 8px;
+                }
+
+                .enter {
+                    height: 45px;
+                    width: 100px;
+                    border-radius: 5px;
+                    border: 2px solid #000;
+                    cursor: pointer;
+                    background-color: transparent;
+                    transition: 0.5s;
+                    text-transform: uppercase;
+                    font-size: 10px;
+                    letter-spacing: 2px;
+                    margin-bottom: 3em;
+                }
+
+                .enter:hover {
+                    background-color: rgb(0, 0, 0);
+                    color: white;
+                }
+            </style>
+        
+            <div class= "container">
+                <div class="card">
+                    <a class="ApplicationForm">Application Form</a>
+
+                    <div class="inputBox1">
+                        <input type="text" required="required">
+                        <span class="user">First Name</span>
+                    </div>
+
+                    <div class="inputBox">
+                        <input type="text" required="required">
+                        <span class="user">Surname</span>
+                    </div>
+
+                    <div class="inputBox">
+                        <input type="text" required="required">
+                        <span class="user">Email</span>
+                    </div>
+
+                    <div class="inputBox">
+                        <input type="text" required="required">
+                        <span>DOB</span>
+                    </div>
+
+                    <div class="inputBox">
+                        <input type="text" required="required">
+                        <span>City</span>
+                    </div>
+
+                    <div class="inputBox">
+                        <input type="password" required="required">
+                        <span>Address</span>
+                    </div>
+
+                    <div class="inputBox">
+                        <input type="password" required="required">
+                        <span>Post code</span>
+                    </div>
+
+                    <button class="enter">Enter</button>
 
                 </div>
-
-                <!-- Hide right-floated links on small screens and replace them with a menu icon -->
-
-                <a onclick="w3_open();" href="javascript:void(0);" class="w3-bar-item w3-button w3-right w3-hide-large w3-hide-medium">
-
-                    <i class="fa fa-bars"></i>
-
-                </a>
-
-            </div>
-
-        </div>
-
-        <!-- Sidebar on small screens when clicking the menu icon -->
-
-        <nav class="w3-sidebar w3-bar-block w3-black w3-card w3-animate-left w3-hide-medium w3-hide-large" style="display:none" id="mySidebar">
-        
-            <a href="javascript:void(0)" onclick="w3_close()" class="w3-bar-item w3-button w3-large w3-padding-16">Close ×</a>
-
-            <a onclick="w3_close(); goToPage(0);" class="w3-bar-item w3-button">HOME</a>
-
-            <a onclick="w3_close(); goToPage(1);" class="w3-bar-item w3-button">COURSES</a>
-
-            <a onclick="w3_close(); goToPage(2);" class="w3-bar-item w3-button">TEAM</a>
-
-            <a onclick="w3_close(); goToPage(3);" class="w3-bar-item w3-button">JOB SPECIFICATION</a>
-
-            <a onclick="w3_close(); goToPage(4);" class="w3-bar-item w3-button">CONTACT</a>
-
-        </nav>
-      
-        <div id="intro" class="hidden"> <!-- Intro, renders by default -->
-            <div class="w3-display-middle">
-        
-                <!-- the <div> element with display: flex; justify-content: center; will center-align the content inside it, which includes the unordered list (<ul>) and its items (<li>). The display: inline-block; and margin: 0 10px; CSS properties for the list items will make them display on one line with some spacing between them. The list-style: none; and padding: 0; CSS properties for the list will remove any default bullet points and padding. You can replace the content of the list with your own items as needed.-->
-    
-                    <h1 style="text-align: center;">Brewing Innovation:<br><span>Join the Hot Beans Web Team and Build the Future!</span></h1></justify-text>
-    
-            </div>
-        
-            <div class="w3-display-bottommiddle">
-    
-                <p><a onclick="goToPage(0);" class="w3-button w3-white w3-padding-large w3-large w3-margin-top w3-opacity w3-hover-opacity-off">Learn more and start today</a></p>
-    
             </div>
         </div>
+    </div>
 
-        <div style="text-align: center;padding:64px;">
-            
-            <div class="page"> <!-- About Page -->
-            
-                <h1 class="text-purple">About</h1>
-
-                Are you a passionate web developer looking to grow your skills and develop your career with a dynamic and innovative company? Our team of dedicated professionals is always looking for talented individuals to join us and help us take our business to the next level.<br><br><br><br>Our web design company has been providing high-quality web development services for over a decade. Our team is made up of experts in their fields who are committed to delivering exceptional results for our clients. We work with a wide range of businesses, from small startups to large corporations, across various industries. Our mission is to help our clients achieve their business goals through innovative and effective web design and development solutions.
-            </div>
-    
-            <div class="page"> <!-- Courses Page -->
-                
-                <h1 class="text-purple">Courses</h1>
-                
-            </div>
-    
-            <div class="page"> <!-- Team Page -->
-                
-                <h1 class="text-purple">Team</h1>
-                
-            </div>
-    
-            <div class="page"> <!-- Job Specification Page -->
-                
-                <h1 class="text-purple">Job Specification</h1>
-                
-            </div>
-    
-            <div class="page"> <!-- Contact Page -->
-                
-                <h1 class="text-purple">Contact Us</h1>
-                
-            </div>
-
-        </div>
-
-    </body>
+</body>
 
 </html>
