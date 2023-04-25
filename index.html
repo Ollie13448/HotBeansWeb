@@ -109,14 +109,86 @@
 
         }
 
-        ;
-
         .text-purple {
 
             color: #6E54DB;
             text-decoration: underline;
 
         }
+
+        .card { 
+            
+            position: relative; 
+            width: 250px; 
+            height: 250px; 
+            color: #2e2d31; 
+            background: #131313; 
+            overflow: hidden; 
+            border-radius: 20px; 
+            margin: 20px; 
+            display: inline-block; /* add this property */ 
+
+        } 
+        
+        .temporary_text { 
+            
+            font-weight: bold; 
+            font-size: 24px; 
+            padding: 6px 12px; 
+            color: #f8f8f8; 
+        
+        } 
+        
+        .card_title { 
+            
+            font-weight: bold; 
+            color: #131313; 
+            line-height: 15px; 
+        
+        } 
+        
+        .card_subtitle { 
+            
+            display: block; 
+            font-size: 12px; 
+            margin-bottom: 10px; 
+        
+        } 
+        
+        .card_content { 
+            
+            position: absolute; 
+            left: 0; 
+            bottom: 0; 
+            width: 100%; 
+            padding: 20px; 
+            background: #f2f2f2; 
+            border-top-left-radius: 20px; 
+            transform: translateY(150px); 
+            transition: transform .25s; 
+            
+            } 
+            
+            .card_content::before { 
+                
+                content: ''; 
+                position: absolute; 
+                top: -47px; 
+                right: -45px; 
+                width: 100px; 
+                height: 100px; 
+                transform: rotate(-175deg); 
+                border-radius: 50%; 
+                box-shadow: inset 48px 48px #f2f2f2; 
+                
+            } 
+                
+            .card_description { font-size: 14px; opacity: 0; transition: opacity .5s; } 
+                
+            .card:hover .card_content { transform: translateY(0); } 
+                
+            .card:hover .card_description { opacity: 1; transition-delay: .25s; }
+
     </style>
 
     <!--I defined the hover effect for the list items' text by selecting the ul li:hover a CSS selector. This applies the hover effect to all links (<a>) within list items (<li>) within an unordered list (<ul>) when they are hovered over with the mouse. I then set the color property to orange to give the text an orange hover color.-->
@@ -309,6 +381,62 @@
 
             <h1 class="text-purple">Team</h1>
 
+            <div style="display: inline-block; display: flex; justify-content: center;">
+                        
+                <article class="card" style="margin-bottom: 20px; float:left"> 
+                    
+                    <div class="image1"> 
+                        <img src="\img\Lady1.png" width="250" height="250"> 
+                    </div>
+                    
+                    <div class="card_content" style="padding: 10px;"> 
+                        <span class="card_title">Bio</span>
+                        <span style="padding: 0px;" class="card_subtitle"> Sarah Johnson, Web Developer </span>
+                        
+                        <p class="card_description">
+                            
+                            Sarah Johnson is an experienced web developer with expertise in HTML, CSS, JavaScript, and PHP. She creates visually appealing and user-friendly websites for a diverse range of clients. 
+                            
+                            <br>
+                            
+                            Sarah is committed to diversity and inclusion in the tech industry and enjoys attending web development conferences
+                            
+                            <br> and mentoring aspiring developers.
+                        
+                        </p> 
+                    
+                    </div>
+                
+                </article>
+
+                <article class="card" style="margin-bottom: 20px; float:left"> 
+                    
+                    <div class="image1"> 
+                        <img src="\img\Lady1.png" width="250" height="250"> 
+                    </div>
+                    
+                    <div class="card_content" style="padding: 10px;"> 
+                        <span class="card_title">Bio</span>
+                        <span style="padding: 0px;" class="card_subtitle"> Sarah Johnson, Web Developer </span>
+                        
+                        <p class="card_description">
+                            
+                            Sarah Johnson is an experienced web developer with expertise in HTML, CSS, JavaScript, and PHP. She creates visually appealing and user-friendly websites for a diverse range of clients. 
+                            
+                            <br>
+                            
+                            Sarah is committed to diversity and inclusion in the tech industry and enjoys attending web development conferences
+                            
+                            <br> and mentoring aspiring developers.
+                        
+                        </p> 
+                    
+                    </div>
+                
+                </article>
+
+            </div>
+
             Our team of web developers includes a number of trainees who have already made great strides in their
             careers. Meet Sarah, who joined us just a year ago and has already become a valuable member of our team. Or
             how about John, who has been with us for two years and has recently taken on a leadership role in a new
@@ -355,10 +483,24 @@
                     gap: 35px;
                     border-radius: 15px;
                     background: #e3e3e3;
-                    box-shadow: 16px 16px 32px #c8c8c8,
-                        -16px -16px 32px #fefefe;
+                    box-shadow: 16px 16px 32px #c8c8c8, -16px -16px 32px #fefefe;
                     border-radius: 8px;
-                    margin: auto;
+                }
+
+                .card-app {
+
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    min-height: 350px;
+                    width: 400px;
+                    flex-direction: column;
+                    gap: 35px;
+                    border-radius: 15px;
+                    background: #e3e3e3;
+                    box-shadow: 16px 16px 32px #c8c8c8, -16px -16px 32px #fefefe;
+                    border-radius: 8px;
+
                 }
 
                 .inputBox,
@@ -441,6 +583,7 @@
                     font-size: 10px;
                     letter-spacing: 2px;
                     margin-bottom: 3em;
+                    margin:4px;
                 }
 
                 .UploadDocuments:hover {
@@ -449,8 +592,8 @@
                 }
 
                 .enter {
-                    height: 45px;
-                    width: 100px;
+                    height: 47px;
+                    width: 110px;
                     border-radius: 5px;
                     border: 2px solid #000;
                     cursor: pointer;
@@ -460,6 +603,7 @@
                     font-size: 10px;
                     letter-spacing: 2px;
                     margin-bottom: 3em;
+                    margin:4px;
                 }
 
                 .enter:hover {
@@ -468,8 +612,8 @@
                 }
             </style>
 
-            <div class="container">
-                <div class="card">
+            <div class="container" style="display: inline-block;">
+                <div class="card-app">
                     <a class="ApplicationForm">Application Form</a>
                     We ask for basic contact information, a resume, and a cover letter outlining why you think you would
                     be a good fit for our company.
@@ -509,9 +653,12 @@
 
                     </div>
 
-                    <button class="UploadDocuments">Upload Documents</button>
+                    <div style="display: flex;justify-content: center;">
+                        
+                        <button class="UploadDocuments">Upload Documents</button>
+                        <button class="enter">Enter</button>
 
-                    <button class="enter">Enter</button>
+                    </div>
 
                 </div>
             </div>
@@ -521,3 +668,4 @@
 </body>
 
 </html>
+
