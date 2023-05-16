@@ -33,6 +33,27 @@
 
         /* Full height image header */
 
+        body {
+
+            background-image: url('img/Our Promise.png');
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: cover;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            z-index: -1;
+
+        }
+        
+        body {
+
+            background-color: #2e2e2e;
+
+        }
+
 
         /* body {
 
@@ -355,8 +376,8 @@
 
 <body>
 
-    <div id="bgImg" class="background-image"></div>
-    </div>
+    <!--<div id="bgImg" class="background-image"></div>
+    </div>-->
 
     <!--I first created a container element with the position: relative; CSS property. This is because the position: absolute; property will position the image relative to the nearest positioned ancestor. Then I created an img element with the class attribute set to "top-left" and set the src, alt, width, and height attributes as needed. Finally, I applied the position: absolute;, top: 0;, and left: 0; properties to the .top-left CSS class, which positions the image in the top left corner of its container element.-->
 
@@ -868,9 +889,10 @@
                 <div class="container" style="display: inline-block;">
                     <div class="card-app">
                         <a class="ApplicationForm">Application Form</a>
-                        We ask for basic contact information, a resume, and a cover letter outlining why you think you
-                        would
-                        be a good fit for our company.
+                        <p style="padding:20px;">
+                            We ask for basic contact information, a resume, and a cover letter outlining<br> why you think you
+                            would be a good fit for our company.
+                        </p>
                         <div class="inputBox1">
                             <input type="text" required="required">
                             <span class="user">First Name</span>
@@ -937,6 +959,7 @@
                 /* This Below is the CSS for the Responsive Column Cards */
 
                 .job__card {
+                    border-radius: 10px;
                     display: flex;
                     flex-direction: column;
                     align-items: center;
@@ -949,6 +972,7 @@
                     text-align: center;
                     width: 1000px;
                     margin: 2em auto;
+                    background-color: white;
                 }
 
                 /* White Background & Image Layers */
@@ -991,10 +1015,9 @@
                     justify-content: center;
                     align-items: center;
                     min-height: 350px;
-                    width: 400px;
+                    width: 100%;
                     flex-direction: column;
-                    gap: 35px;
-                    border-radius: 15px;
+                    gap: 15px;
                     background: #e3e3e3;
                     box-shadow: 16px 16px 32px #c8c8c8, -16px -16px 32px #fefefe;
                     border-radius: 8px;
@@ -1005,6 +1028,7 @@
                 .inputBox1 {
                     position: relative;
                     width: 350px;
+                    display: Flex;
                 }
 
                 .inputBox input,
@@ -1020,6 +1044,8 @@
                     border-bottom: 2px solid #000;
                     transition: 0.1s;
                     border-bottom-left-radius: 8px;
+                    flex: 1;
+                    margin-right: 10px;
                 }
 
                 .inputBox span,
@@ -1109,8 +1135,6 @@
                     color: white;
                 }
             </style>
-
-            <!-- This Below is the HTML code for the Application Form -->
 
         </div>
     </div>
